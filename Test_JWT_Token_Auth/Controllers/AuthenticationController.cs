@@ -18,11 +18,12 @@ namespace Test_JWT_Token_Auth.Controllers
         {
             _authenticateService = authenticateService;
         }
+        //API method POST
         [HttpPost]
         public IActionResult Post([FromBody]User model)
         {
             var user = _authenticateService.Authenticate(model.UserName, model.Password);
-
+            //If credentials not found return BadRequest
             if(user == null)
             {
                 return BadRequest(new { message = "Username or Password is incorrect" });

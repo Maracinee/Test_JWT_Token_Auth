@@ -6,6 +6,7 @@ using Test_JWT_Token_Auth.Models;
 
 namespace Test_JWT_Token_Auth.Services
 {
+    //Interface Authenticate implemented in AuthenticateService
     public interface IAuthenticateService
     {
         User Authenticate(string userName, string password);
